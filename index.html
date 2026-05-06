@@ -1,186 +1,187 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Modern Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProMVP</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 
-    body {
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
-      color: white;
-    }
+body {
+  background: #0f172a;
+  color: white;
+}
 
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background: rgba(0,0,0,0.2);
-      backdrop-filter: blur(10px);
-    }
+/* Navbar */
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+}
 
-    nav h2 {
-      font-size: 22px;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
+nav a:hover {
+  color: #38bdf8;
+}
 
-    nav ul li {
-      cursor: pointer;
-    }
+/* Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
 
-    /* HERO SECTION */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 80vh;
-      text-align: center;
-      padding: 20px;
-    }
+.hero h1 {
+  font-size: 3rem;
+}
 
-    .hero h1 {
-      font-size: 48px;
-    }
+.hero p {
+  margin: 15px 0;
+  color: #cbd5f5;
+}
 
-    .hero p {
-      margin: 15px 0;
-      font-size: 18px;
-      max-width: 500px;
-    }
+.btn {
+  padding: 12px 25px;
+  border: none;
+  background: #38bdf8;
+  color: black;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: 0.3s;
+}
 
-    .btn {
-      padding: 12px 25px;
-      border-radius: 25px;
-      border: none;
-      background: white;
-      color: #007BFF;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.btn:hover {
+  transform: scale(1.1);
+}
 
-    .btn:hover {
-      background: #007BFF;
-      color: white;
-    }
+/* Sections */
+section {
+  padding: 80px 40px;
+}
 
-    /* CARDS SECTION */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-    .card {
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
+.card {
+  flex: 1 1 250px;
+  padding: 20px;
+  background: #1e293b;
+  border-radius: 15px;
+  transition: 0.3s;
+}
 
-    .card:hover {
-      transform: translateY(-10px);
-    }
+.card:hover {
+  transform: translateY(-10px);
+}
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: rgba(0,0,0,0.2);
-    }
+/* Contact */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
 
-    /* DARK MODE */
-    .dark {
-      background: #111;
-      color: #eee;
-    }
-
-    /* MOBILE RESPONSIVE */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <h2>MySite</h2>
-    <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact</li>
-    </ul>
-    <button class="btn" onclick="toggleDark()">🌙</button>
-  </nav>
+<nav>
+  <h2>ProMVP</h2>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Welcome 🚀</h1>
-    <p>This website automatically adjusts to mobile and desktop screens.</p>
-    <button class="btn" onclick="showMessage()">Click Me</button>
-  </section>
+<!-- Hero -->
+<section id="home" class="hero">
+  <h1>Build Something Amazing</h1>
+  <p>Modern, fast and interactive MVP websites</p>
+  <button class="btn" onclick="scrollToSection('services')">Get Started</button>
+</section>
 
-  <!-- CARDS -->
-  <section class="cards">
+<!-- Services -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="cards">
     <div class="card">
-      <h3>Fast ⚡</h3>
-      <p>Optimized for speed and performance.</p>
+      <h3>Web Development</h3>
+      <p>Fast and scalable websites</p>
     </div>
-
     <div class="card">
-      <h3>Responsive 📱</h3>
-      <p>Works perfectly on Android, iPhone, and PC.</p>
+      <h3>UI/UX Design</h3>
+      <p>Clean and modern design</p>
     </div>
-
     <div class="card">
-      <h3>Modern 🎨</h3>
-      <p>Clean design with smooth effects.</p>
+      <h3>Automation</h3>
+      <p>Smart workflow integration</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Your Name
-  </footer>
+<!-- About -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>We create high-quality MVP products to launch startups quickly.</p>
+</section>
 
-  <script>
-    function showMessage() {
-      alert("You clicked the button! 🎉");
-    }
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Your Email">
+  <textarea placeholder="Message"></textarea>
+  <button class="btn">Send</button>
+</section>
 
-    function toggleDark() {
-      document.body.classList.toggle("dark");
-    }
-  </script>
+<footer>
+  <p>© 2026 ProMVP. All rights reserved.</p>
+</footer>
+
+<script>
+// Smooth scroll
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// Navbar shadow on scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.boxShadow =
+    window.scrollY > 50 ? "0 2px 10px rgba(0,0,0,0.5)" : "none";
+});
+</script>
 
 </body>
 </html>
